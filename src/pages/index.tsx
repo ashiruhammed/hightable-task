@@ -88,20 +88,19 @@ export default function Home() {
             ))}
           </div>
         ) : (
-          <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-4'>
+          <div className='md:grid md:grid-cols-3 lg:grid-cols-5 gap-4 mt-4'>
             {filteredData?.map((category: any) => {
               const isInCart = items.find((item) => item.id === category.id);
 
-              console.log(isInCart, 'this is the cart', items, category);
               return (
                 <Card
                   key={category.id}
-                  className='p-4 hover:scale-110 transition-all duration-75'>
+                  className='p-4 hover:scale-110 transition-all duration-75 mt-4 md:mt-0'>
                   <Image
                     src={category.image}
                     alt={category.title}
                     width={100}
-                    className='min-w-[100px] max-w-[100px] h-[120px] mx-auto'
+                    className='md:min-w-[100px] max-w-[100px] h-[120px] mx-auto'
                     height={40}
                   />
                   <p className='font-bold mt-4 text-sm'>{category.title}</p>
